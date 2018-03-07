@@ -1,0 +1,29 @@
+{
+  "name": "trip-sorter",
+  "version": "1.0.0",
+  "description": "Trip sorter",
+  "scripts": {
+    "preinstall": "cd core; npm install; cd ../front npm install",
+    "start": "concurrently --kill-others \"cd core && npm start\" \"cd front && npm start\"",
+    "dev": "concurrently --kill-others \"cd core && npm start | bunyan\" \"cd front && npm start\"",
+    "test": "npm run test:core; npm run test:front",
+    "test:core": "cd core && npm test",
+    "test:front": "cd front && npm test"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/jdflaugergues/trip-sorter"
+  },
+  "author": "Jonathan de Flaugergues <jdflaugergues@gmail.com>",
+  "license": "ISC",
+  "engine": {
+    "node": "v8.8.1",
+    "npm": "5.4.2"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1"
+  }
+}
